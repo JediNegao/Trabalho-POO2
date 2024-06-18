@@ -29,6 +29,7 @@ public class Cliente {
      @Column(nullable = false, unique=true, length=60)
     private String cpf;
      @OneToMany
+     @JoinColumn(name="idEstadia")
     private List<Estadia> estadia;
 //com id
 

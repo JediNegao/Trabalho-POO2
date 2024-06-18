@@ -39,8 +39,33 @@ public class Estadia {
     
     
     @OneToMany
-    @JoinColumn(name="idEstadia")
-    private List<Estadia> estadia;
+    @JoinColumn(name="idPedidoSQ")
+    private List<PedidoSQ> pedidoSQ;
+
+    public List<PedidoSQ> getPedidoSQ() {
+        return pedidoSQ;
+    }
+
+    public void setPedidoSQ(List<PedidoSQ> pedidoSQ) {
+        this.pedidoSQ = pedidoSQ;
+    }
+    
+    
+    
+
+    public Estadia(int idEstadia, Date checkin, Date checkOut, double valortotalSQ, double valorTotalEstadia, Cliente cliente, Quarto quarto, List<PedidoSQ> pedidoSQ) {
+        this.idEstadia = idEstadia;
+        this.checkin = checkin;
+        this.checkOut = checkOut;
+        this.valortotalSQ = valortotalSQ;
+        this.valorTotalEstadia = valorTotalEstadia;
+        this.cliente = cliente;
+        this.quarto = quarto;
+        this.pedidoSQ = pedidoSQ;
+    }
+    
+    
+    
 
     public Estadia(Date checkin, Date checkOut, double valortotalSQ, double valorTotalEstadia, Cliente cliente, Quarto quarto) {
         this.checkin = checkin;
